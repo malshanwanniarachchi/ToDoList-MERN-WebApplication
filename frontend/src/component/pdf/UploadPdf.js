@@ -68,7 +68,7 @@ const UploadPdf = () => {
           
           <div className="form-group">
             <label htmlFor="pdfFile">Attach:</label>
-            <input type="file" id="pdfFile" onChange={handleFileChange} required/>
+            <input type="file" id="pdfFile" onChange={handleFileChange}/>
           </div>
           <button type="submit" id="uploadButton">Add</button>
         </form>
