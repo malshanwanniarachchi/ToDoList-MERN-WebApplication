@@ -1,3 +1,4 @@
+// src/components/pdfList/PdfList.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./style.css";
@@ -117,14 +118,14 @@ const PdfList = () => {
           {pdfs.map((pdf, index) => (
             <li key={pdf._id} className="pdfItem">
               <div className="pdfInfo">
-                <a href={`http://localhost:8000/api/pdf/${pdf._id}`} target="_blank" rel="noopener noreferrer">
-                  {index + 1}. {pdf.Name}
+                <a className="pdfName" href={`http://localhost:8000/api/pdf/${pdf._id}`} target="_blank" rel="noopener noreferrer">
+                  {index + 1}. {pdf.name ? pdf.name : pdf.Name}
                 </a>
+                <p className="pdfDescription">{pdf.description}</p>
               </div>
               <div>
-              <button className="deleteButton" onClick={() => removePdf(pdf._id)}>Delete</button>&nbsp;
-                <button className="downloadButton" onClick={() => downloadPdf(pdf._id, pdf.Name)}>Download</button>
-                
+                <button className="deleteButton" onClick={() => removePdf(pdf._id)}>Delete</button>&nbsp;
+                <button className="downloadButton" onClick={() => downloadPdf(pdf._id, pdf.name ? pdf.name : pdf.Name)}>Download</button>
               </div>
             </li>
           ))}

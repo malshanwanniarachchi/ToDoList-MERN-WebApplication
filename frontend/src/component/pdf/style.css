@@ -210,3 +210,83 @@ body {
   text-decoration: underline;
 }
 
+
+
+
+
+
+
+/* src/components/pdfList/style.css */
+#pdfListContainer {
+  padding: 20px;
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#errorMessage {
+  color: red;
+  text-align: center;
+}
+
+#pdfList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pdfItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pdfInfo {
+  flex: 1;
+}
+
+.pdfName {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.pdfName:hover {
+  text-decoration: underline;
+}
+
+.pdfDescription {
+  margin-top: 5px;
+  font-style: italic;
+  color: #555;
+}
+
+.deleteButton,
+.downloadButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.deleteButton {
+  background-color: #d9534f;
+}
+
+.downloadButton {
+  background-color: #5cb85c;
+}
+
+.deleteButton:hover,
+.downloadButton:hover {
+  opacity: 0.8;
+}
