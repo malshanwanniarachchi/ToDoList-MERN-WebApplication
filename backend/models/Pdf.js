@@ -21,4 +21,4 @@ const PdfSchema = new Schema({
   }
 }, {timestamps: true});
 
-module.exports = mongoose.model("pdf", PdfSchema);
+module.exports = mongoose.model("todo", PdfSchema);
