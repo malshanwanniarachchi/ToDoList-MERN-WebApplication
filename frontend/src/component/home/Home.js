@@ -76,7 +76,7 @@ export default function Home() {
                                 <h2 className="display-5 fw-bolder"><span className="text-gradient d-inline">About Me</span></h2>
                                 <p className="lead fw-light mb-4">Welcome to To Do List, simple to do list to manage it all.</p>
                                     <p className="text-muted">
-                                        At To Do List, we are dedicated to simplifying your PDF file management through innovative features. With a focus on user experience and efficiency, our platform allows you to seamlessly upload, view, and download PDF files. We aim to enhance your productivity by providing a robust system that ensures secure handling and easy access to your important documents. Join us at PDF Hub and experience a new level of convenience and reliability in managing your PDF files. Let's streamline your document workflow and achieve excellence together.
+                                    At To Do List, we are dedicated to simplifying your task management through innovative features. With a focus on user experience and efficiency, our platform allows you to seamlessly create, organize, and track your tasks. We aim to enhance your productivity by providing a robust system that ensures secure handling and easy access to your to-do lists. Join us at To Do List and experience a new level of convenience and reliability in managing your tasks. Let's streamline your workflow and achieve excellence together.
                                     </p>
                             </div>
                         </div>
