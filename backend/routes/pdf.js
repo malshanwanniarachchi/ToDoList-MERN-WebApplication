@@ -1,5 +1,5 @@
 const express = require("express");
-const { addPdf, getAllPdf, viewPdf,  deletePdf } = require("../controllers/pdf-controller");
+const { addPdf, getAllPdf, viewPdf,  deletePdf, updatePdf, getDataById } = require("../controllers/pdf-controller");
 const { verifyToken } = require("../helpers/auth-middleware");
 const multer = require('multer');
 
@@ -11,6 +11,8 @@ router.post("/create", upload.single('file'), addPdf);
 router.get("/",getAllPdf);
 router.get("/:id", viewPdf);
 router.delete("/:id",  deletePdf);
+router.put("/update/:id",  updatePdf);
+router.get("/pdf/:id",  getDataById);
 
 module.exports = router;
 

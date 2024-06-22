@@ -5,6 +5,7 @@ import Login from './component/login/Login';
 import UploadPdf from './component/pdf/UploadPdf';
 import PdfList from './component/pdf/PdfList';
 import Home from './component/home/Home';
+import UpdatePdf from './component/pdf/UpdatePdf';
 
 export default class App extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
          <Route path="/add" exact component={UploadPdf}></Route>
          <Route path="/list" exact component={PdfList}></Route>
          <Route path="/home" exact component={Home}></Route>
+         <Route path="/update/:id" exact component={UpdatePdf}></Route>
          </BrowserRouter>  
       </div>
     )

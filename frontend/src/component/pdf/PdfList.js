@@ -5,6 +5,7 @@ import "./style.css";
 import NavBar from '../navBar/NavBar';
 import Swal from 'sweetalert2';
 
+
 const PdfList = () => {
   const [pdfs, setPdfs] = useState([]);
   const [message, setMessage] = useState('');
@@ -124,6 +125,9 @@ const PdfList = () => {
                 <p className="pdfDescription">{pdf.description}</p>
               </div>
               <div>
+                <a href={`/update/${pdf._id}`}>
+                <button className="updateButton">Update</button>&nbsp;
+                </a>
                 <button className="deleteButton" onClick={() => removePdf(pdf._id)}>Delete</button>&nbsp;
                 <button className="downloadButton" onClick={() => downloadPdf(pdf._id, pdf.name ? pdf.name : pdf.Name)}>Download</button>
               </div>

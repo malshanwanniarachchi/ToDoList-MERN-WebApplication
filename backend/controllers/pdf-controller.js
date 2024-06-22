@@ -79,9 +79,63 @@ const deletePdf = async (req, res) => {
   return res.status(200).json({ message: "Task deleted successfully!" });
 };
 
+//update
+
+const updatePdf = async (req, res) => {
+  const  pdfId = req.params.id;
+  const { Name, description} = req.body;
+
+  let pdf;
+  try {
+      pdf = await Pdf.findById(pdfId).select("Name description");
+    if (!pdf) {
+      return res.status(404).json({ message: "Task not found!" });
+    }
+  } catch (err) {
+    return res.status(500).json({ message: "Error finding Task!" });
+  }
+
+  if (Name !== undefined) {
+      pdf.Name = Name;
+  }
+  if (description !== undefined) {
+      pdf.description = description;
+  }
+
+  try {
+    await pdf.save();
+    return res
+      .status(200)
+      .json({ message: "Task updated successfully!", pdf});
+  } catch (err) {
+    return res.status(500).json({ message: "Updating Task failed!" });
+  }
+};
+
+
+
+const getDataById = async (req, res) => {
+  const pdfId = req.params.id;
+
+  let pdf;
+  try {
+      pdf = await Pdf.findById(pdfId).select('Name description');
+      if (!pdf) {
+        return res.status(404).json({ message: "Pdf not found!" });
+      }
+  } catch (err) {
+    return res.status(500).json({ message: "Error retrieving PDF!" });
+  }
+
+  return res.status(200).json({ pdf });
+};
+
+
 module.exports = {
   addPdf,
   getAllPdf,
   viewPdf,
-  deletePdf
+  deletePdf,
+  updatePdf,
+  getDataById
 };
